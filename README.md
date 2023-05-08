@@ -15,7 +15,7 @@ Requires docker to be installed and running in the background.
 docker run -t -i --env-file ./env.list natetradedatawarehouse_dw
 ```
 
-## Credentials, endpoints
+## Credentials, Endpoints
 Put credentials in env.list and they will be available as environment variables within the container.
 If using this in production, migrate the credentials to a password safe of some sort.
 
