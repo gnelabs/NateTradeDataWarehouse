@@ -99,3 +99,19 @@ class DatabaseHelper(object):
         )
         
         return self.generic_select_query(query)
+    
+    def top_stocks_activity(self, date: str) -> list:
+        """
+        Example query to get the top 50 stocks by transactions.
+        """
+        query = """
+        SELECT *
+        FROM db.daily_underlying 
+        WHERE date = '{date}'
+        ORDER BY num_transactions 
+        DESC
+        LIMIT 50
+        """.format(date = date)
+        
+        return self.generic_select_query(query)
+
